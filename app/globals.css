@@ -222,17 +222,34 @@
 
   /* Bank Card */
   .bank-card {
-    @apply relative flex h-[190px] w-full max-w-[320px] justify-between rounded-[20px] border border-white bg-bank-gradient shadow-creditCard backdrop-blur-[6px];
+    @apply relative flex h-[190px] w-full max-w-[320px] justify-between rounded-[20px] border border-white shadow-creditCard backdrop-blur-[6px];
+  }
+
+    /* Card with Dark Gradient */
+  .bank-card_dark-gradient {
+    @apply bg-bank-dark-gradient text-white;
+  }
+
+  /* Card with White Background and Border */
+  .bank-card_white {
+    @apply bg-white border border-bank-white-border text-gray-900;
   }
 
   .bank-card_content {
-    @apply relative z-10 flex size-full max-w-[228px] flex-col justify-between rounded-l-[20px] bg-gray-700 bg-bank-gradient px-5 pb-4 pt-5;
+    @apply relative z-10 flex size-full max-w-[228px] flex-col justify-between rounded-l-[20px] px-5 pb-4 pt-5;
   }
 
   .bank-card_icon {
-    @apply flex size-full flex-1 flex-col items-end justify-between rounded-r-[20px] bg-bank-gradient bg-cover bg-center bg-no-repeat py-5 pr-5;
+    @apply flex size-full flex-1 flex-col items-end justify-between rounded-r-[20px] bg-cover bg-center bg-no-repeat py-5 pr-5;
   }
-
+  
+  .bank-card_label {
+    @apply text-labelBlue text-12 font-semibold;
+  }
+  
+  .bank-card_value {
+    @apply text-valueBlue text-14 font-bold;
+  }
   /* Bank Info */
   .bank-info {
     @apply gap-[18px] flex p-4 transition-all border bg-blue-25 border-transparent;
@@ -369,7 +386,7 @@
   }
 
   .sidebar-logo {
-    @apply 2xl:text-26 font-ibm-plex-serif text-[26px] font-bold text-black-1 max-xl:hidden;
+    @apply 2xl:text-26 inter text-[26px] font-bold text-black-3 max-xl:hidden;
   }
 
   .sidebar-link {

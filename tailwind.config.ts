@@ -44,6 +44,8 @@ const config = {
           700: "#C11574",
           900: "#851651",
         },
+        labelBlue: '#718EBF',
+        valueBlue: '#343C6A',
         blue: {
           25: "#F5FAFF",
           100: "#D1E9FF",
@@ -58,6 +60,7 @@ const config = {
         black: {
           1: "#00214F",
           2: "#344054",
+          3: ' #343C6A',
         },
         gray: {
           25: "#FCFCFD",
@@ -71,9 +74,8 @@ const config = {
       },
       backgroundImage: {
         "bank-gradient": "linear-gradient(90deg, #0179FE 0%, #4893FF 100%)",
-        "gradient-mesh": "url('/icons/gradient-mesh.svg')",
-        "bank-green-gradient":
-          "linear-gradient(90deg, #01797A 0%, #489399 100%)",
+        "bank-green-gradient": "linear-gradient(90deg, #01797A 0%, #489399 100%)",
+        "bank-dark-gradient": "linear-gradient(107.38deg, #5B5A6F 2.61%, #000000 101.2%)",
       },
       boxShadow: {
         form: "0px 1px 2px 0px rgba(16, 24, 40, 0.05)",
@@ -83,9 +85,13 @@ const config = {
           "0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)",
         creditCard: "8px 10px 16px 0px rgba(0, 0, 0, 0.05)",
       },
+      borderColor: {
+        "bank-white-border": "#DFEAF2",
+      },
       fontFamily: {
         inter: "var(--font-inter)",
         "ibm-plex-serif": "var(--font-ibm-plex-serif)",
+        lato: ['Lato', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": {
