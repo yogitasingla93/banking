@@ -5,17 +5,26 @@ import AreaChart  from './AreaChart';
 import PieChart from './PieChart';
 import BankCard from './BankCards';
 import VerticalBarChart from './VerticalBarChart';
+import RecentTransactions from './RecentTransactions';
+import QuickTransfer from './QuickTransfer';
 
 const TotalBalanceBox = ({
     accounts = [], totalBanks, totalCurrentBalance
-}: TotlaBalanceBoxProps) => {
+}: TotalBalanceBoxProps) => {
   return (
     <section className='total-balance'>
+        <div className="min-h-screen bg-gray-200 flex justify-center items-center">
+      <QuickTransfer />
+    </div>
+ 
         <div className='flex flex-col gap-6'>
             <h2 className='header-2'> 
               Bank Accounts {totalBanks}
             </h2>
+            
+        <RecentTransactions />
         </div>
+
         <div className='flex flex-col gap-2'>
             <div className='total-balance-label'> 
               <VerticalBarChart />
@@ -31,19 +40,7 @@ const TotalBalanceBox = ({
         <div className='flex flex-col gap-2'>
           <AreaChart />
         </div>
-        <BankCard account={{
-        id: '',
-        availableBalance: 0,
-        currentBalance: 5756,
-        officialName: '',
-        mask: '1234',
-        institutionId: '',
-        name: 'Eddy Cusuma',
-        type: '',
-        subtype: '',
-        appwriteItemId: '',
-        sharableId: ''
-      }} userName={''} />
+      
     </section>
   )
 }

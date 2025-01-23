@@ -15,7 +15,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-const MobileNav = () => {
+
+const MobileNav = ({ user }: MobileNavProps) => {
   const pathname = usePathname();
 
   return (
@@ -36,9 +37,9 @@ const MobileNav = () => {
               src="/icons/logo.svg"
               width={34}
               height={34}
-              alt="Horizon logo"
+              alt="logo"
             />
-            <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">Horizon</h1>
+            <h1 className="text-26 font-ibm-plex-serif font-bold text-gray-1">Soar Test</h1>
           </Link>
           <div className="mobilenav-sheet">
             <SheetClose asChild>
@@ -49,7 +50,7 @@ const MobileNav = () => {
                 return (
                   <SheetClose asChild key={item.route}>
                     <Link href={item.route} key={item.label}
-                      className={cn('mobilenav-sheet_close w-full', { 'bg-bank-gradient': isActive })}
+                      className={cn('mobilenav-sheet_close w-full')}
                     >
                         <Image 
                           src={item.imgURL}
@@ -57,10 +58,12 @@ const MobileNav = () => {
                           width={20}
                           height={20}
                           className={cn({
-                            'brightness-[3] invert-0': isActive
+                            'brightness-0 invert sepia hue-rotate-[0deg] saturate-100': isActive, // Apply color filter only when active
                           })}
+                          style={isActive ? { filter: 'brightness(0) saturate(100%) invert(10%) sepia(80%) hue-rotate(0deg)', color: '#232323' } : {}}                
+        
                         />
-                      <p className={cn("text-16 font-semibold text-black-2", { "text-white": isActive })}>
+                      <p className={cn("text-16 font-semibold text-black-2", { "text-gray-1": isActive })}>
                         {item.label}
                       </p>
                     </Link>
@@ -68,11 +71,11 @@ const MobileNav = () => {
                 )
               })}
 
-              
+              USER
               </nav>
             </SheetClose>
 
-           
+        
           </div>
         </SheetContent>
       </Sheet>

@@ -12,18 +12,23 @@ const config = {
   prefix: "",
   theme: {
     container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
+      center: true, // Center content in its container
+      padding: {
+        DEFAULT: "0",
+        lg: 0, // Padding for all screens
       },
-    },
+      screens: {
+        "2xl": "1100px",
+      },
+    },  
     extend: {
       colors: {
         fill: {
           1: "rgba(255, 255, 255, 0.10)",
         },
         bankGradient: "#0179FE",
+        dash: "#f5f7fa",
+        ccborder: '#DFEAF2',
         indigo: {
           500: "#6172F3",
           700: "#3538CD",
@@ -36,6 +41,12 @@ const config = {
           700: "#027A48",
           900: "#054F31",
         },
+        red: {
+          500: "#FF4B4A"
+        },
+        green: {
+          500: "#41D4A8"
+        },
         pink: {
           25: "#FEF6FB",
           100: "#FCE7F6",
@@ -44,8 +55,6 @@ const config = {
           700: "#C11574",
           900: "#851651",
         },
-        labelBlue: '#718EBF',
-        valueBlue: '#343C6A',
         blue: {
           25: "#F5FAFF",
           100: "#D1E9FF",
@@ -60,7 +69,6 @@ const config = {
         black: {
           1: "#00214F",
           2: "#344054",
-          3: ' #343C6A',
         },
         gray: {
           25: "#FCFCFD",
@@ -70,19 +78,21 @@ const config = {
           600: "#475467",
           700: "#344054",
           900: "#101828",
+          1: "#232323",
+          2: "B1B1B1",
+          3: "#EDF1F7",
+          4: "#343C6A",
         },
       },
       backgroundImage: {
         "bank-gradient": "linear-gradient(90deg, #0179FE 0%, #4893FF 100%)",
         "bank-green-gradient": "linear-gradient(90deg, #01797A 0%, #489399 100%)",
-        "bank-dark-gradient": "linear-gradient(107.38deg, #5B5A6F 2.61%, #000000 101.2%)",
-      },
+        "bg-bank-dark-gradient": "linear-gradient(107.38deg, #5B5A6F 2.61%, #000000 101.2%)",
+        "card-bottom-dark": 'linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%)',      },
       boxShadow: {
         form: "0px 1px 2px 0px rgba(16, 24, 40, 0.05)",
-        chart:
-          "0px 1px 3px 0px rgba(16, 24, 40, 0.10), 0px 1px 2px 0px rgba(16, 24, 40, 0.06)",
-        profile:
-          "0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)",
+        chart: "0px 1px 3px 0px rgba(16, 24, 40, 0.10), 0px 1px 2px 0px rgba(16, 24, 40, 0.06)",
+        profile: "0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03)",
         creditCard: "8px 10px 16px 0px rgba(0, 0, 0, 0.05)",
       },
       borderColor: {

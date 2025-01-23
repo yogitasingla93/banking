@@ -1,12 +1,13 @@
-"use client";
+'use client'
 
-import { sidebarLinks } from '@/constants';
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { sidebarLinks } from '@/constants'
+import { cn } from '@/lib/utils'
+import Image from 'next/image'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
-const Sidebar = () => {
+
+const Sidebar = ({ user }: SiderbarProps) => {
   const pathname = usePathname();
 
   return (
@@ -17,21 +18,18 @@ const Sidebar = () => {
             src="/icons/logo.svg"
             width={34}
             height={34}
-            alt="Horizon logo"
+            alt="logo"
             className="size-[24px] max-xl:size-14"
           />
           <h1 className="sidebar-logo">Soar Test</h1>
         </Link>
 
-        {/* You can add a static welcome message or remove this section entirely */}
-        <h2>Welcome!</h2> {/* Static welcome message */}
-
         {sidebarLinks.map((item) => {
-          const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`);
+          const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`)
 
           return (
             <Link href={item.route} key={item.label}
-              className={cn('sidebar-link', { 'bg-bank-gradient': isActive })}
+              className={cn('sidebar-link')}
             >
               <div className="relative size-6">
                 <Image 
@@ -39,19 +37,24 @@ const Sidebar = () => {
                   alt={item.label}
                   fill
                   className={cn({
-                    'brightness-[3] invert-0': isActive
+                    'brightness-0 invert sepia hue-rotate-[0deg] saturate-100': isActive, // Apply color filter only when active
                   })}
+                  style={isActive ? { filter: 'brightness(0) saturate(100%) invert(10%) sepia(80%) hue-rotate(0deg)', color: '#232323' } : {}}                
                 />
               </div>
-              <p className={cn("sidebar-label", { "!text-white": isActive })}>
+              <p className={cn("sidebar-label", { "!text-gray-1": isActive })}>
                 {item.label}
               </p>
             </Link>
-          );
+          )
         })}
+        
+      
       </nav>
-    </section>
-  );
-};
 
-export default Sidebar;
+     
+    </section>
+  )
+}
+
+export default Sidebar

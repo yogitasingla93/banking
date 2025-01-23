@@ -41,7 +41,7 @@ export const sidebarLinks = [
   },
   {
     imgURL: "/icons/settingsIcon.svg",
-    route: "/setting",
+    route: "/settings",
     label: "Setting",
   },
 ];

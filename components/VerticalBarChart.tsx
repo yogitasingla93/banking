@@ -11,44 +11,43 @@ import {
   Legend,
   ChartOptions,
 } from "chart.js";
+import ChartDataLabels from "chartjs-plugin-datalabels"; 
 import { Bar } from "react-chartjs-2";
 
-// Register Chart.js components
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
   BarElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  ChartDataLabels 
 );
 
-// Define the chart options with explicit typing
-export const options: ChartOptions<'bar'> = {
+
+export const options: ChartOptions<"bar"> = {
   responsive: true,
   plugins: {
-      datalabels: {
-        display: function(context) {
-            // Disable data label for the section you want to hide
-            return context.dataIndex === 100; // Example: hide label for March
-        }
-    },
     legend: {
-      display: true, 
+      display: true,
+      position: "right", 
       labels: {
-        usePointStyle: true, 
-        pointStyle: 'circle', 
-        padding: 20, 
+        usePointStyle: true,
+        pointStyle: "circle",
+        padding: 20,
       },
     },
     title: {
-      display: true,
-      text: "Weekly Activity",
+      display: false, 
     },
     tooltip: {
-      enabled: true, 
-      mode: 'index', 
-      intersect: false, 
+      enabled: true,
+      mode: "index",
+      intersect: false,
+    },
+    datalabels: {
+      display: false, 
     },
   },
   scales: {
@@ -60,9 +59,9 @@ export const options: ChartOptions<'bar'> = {
     y: {
       beginAtZero: true,
       grid: {
-        color: 'transparent', // Set grid color to transparent
+        color: "transparent",
       },
-      max: 1000, // Adjust this value based on your data range
+      max: 500, 
     },
   },
 };
@@ -74,38 +73,51 @@ export const data = {
   datasets: [
     {
       label: "Deposit",
-      data: [500, 700, 400, 800, 650, 900, 550], // Replace with dynamic data if needed
+      data: [250, 350, 200, 400, 370, 450, 270],
       backgroundColor: "#396AFF",
-      barThickness: 10, // Set bar thickness to 12
-      borderRadius: { 
-        topLeft: 10, 
-        topRight: 10, 
-        bottomLeft: 10, // Set bottom left radius
-        bottomRight: 10 // Set bottom right radius
+      barThickness: 8,
+      borderRadius: {
+        topLeft: 10,
+        topRight: 10,
+        bottomLeft: 10,
+        bottomRight: 10,
       },
-      categoryPercentage: 0.5, // Adjust this value to control the gap
-      barPercentage: 0.5, // Adjust this value to control the gap
+      categoryPercentage: 0.5, 
+      barPercentage: 0.4, 
     },
     {
       label: "Withdraw",
-      data: [300, 450, 500, 600, 700, 800, 400], // Replace with dynamic data if needed
+      data: [150, 210, 250, 300, 350, 400, 200],
       backgroundColor: "#232323",
-      barThickness: 10, // Set bar thickness to 12
-      borderRadius: { 
-        topLeft: 10, 
-        topRight: 10, 
-        bottomLeft: 10, // Set bottom left radius
-        bottomRight: 10 // Set bottom right radius
+      barThickness: 8,
+      borderRadius: {
+        topLeft: 10,
+        topRight: 10,
+        bottomLeft: 10,
+        bottomRight: 10,
       },
-      categoryPercentage: 0.5, // Adjust this value to control the gap
-      barPercentage: 0.5, // Adjust this value to control the gap
+      categoryPercentage: 0.5,
+      barPercentage: 0.4,
     },
   ],
 };
 
 // VerticalBarChart component
 const VerticalBarChart: React.FC = () => {
-  return <Bar options={options} data={data} />;
+  return (
+    <div
+      style={{
+        backgroundColor: "#FFFFFF",
+        borderRadius: "10px",
+        padding: "20px", 
+        boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)", 
+        position: "relative",
+      }}
+    >
+
+      <Bar options={options} data={data} />
+    </div>
+  );
 };
 
 export default VerticalBarChart;

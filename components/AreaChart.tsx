@@ -15,7 +15,7 @@ import {
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 
-// Register Chart.js components
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -27,30 +27,30 @@ ChartJS.register(
   Legend
 );
 
-// Chart options
+
 export const options: ChartOptions<'line'> = {
   responsive: true,
   plugins: {
     legend: {
-      display: false, // Hide the legend
+      display: false,
     },
     title: {
-      display: true,
+      display: false,
       text: "Balance History",
     },
     tooltip: {
-      enabled: true, // Enable tooltips
-      mode: 'index', // Show tooltips for all datasets at the hovered index
-      intersect: false, // Show tooltips even if the mouse is not directly over a point
+      enabled: true, 
+      mode: 'index', 
+      intersect: false,
     },
   },
   elements: {
     line: {
-      tension: 0.4, // Adjust this value for more or less curvature
-      borderCapStyle: 'round' as const, // Makes the ends of the line rounded
+      tension: 0.4, 
+      borderCapStyle: 'round' as const, 
     },
     point: {
-      radius: 0, // Set to 0 to hide the points
+      radius: 0, 
     },
   },
 };
@@ -58,7 +58,7 @@ export const options: ChartOptions<'line'> = {
 // Labels for the x-axis
 const labels = ["Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan"];
 
-// Generate gradient for the chart
+
 const createGradient = (ctx: CanvasRenderingContext2D) => {
   const gradient = ctx.createLinearGradient(0, 0, 0, 300);
   gradient.addColorStop(0, "rgba(45, 96, 255, 0.25)");
@@ -66,7 +66,7 @@ const createGradient = (ctx: CanvasRenderingContext2D) => {
   return gradient;
 };
 
-// AreaChart component
+
 const AreaChart: React.FC = () => {
   const [chartData, setChartData] = useState<any>(null);
 
@@ -81,13 +81,13 @@ const AreaChart: React.FC = () => {
           {
             fill: true,
             label: "",
-            data: [120, 300, 450, 700, 200, 500, 800], // Replace with dynamic data if needed
+            data: [320, 100, 400, 200, 130, 320, 210], 
             borderColor: "#1814F3",
             borderWidth: 3,
             backgroundColor: gradient,
-            tension: 0.4, // Adjust this value for more or less curvature
-            borderCapStyle: 'round' as const, // Makes the ends of the line rounded
-            pointRadius: 0, // Set to 0 to hide the points
+            tension: 0.4, 
+            borderCapStyle: 'round' as const,
+            pointRadius: 0, 
           },
         ],
       };
@@ -95,7 +95,11 @@ const AreaChart: React.FC = () => {
     }
   }, []);
 
-  return chartData ? <Line options={options} data={chartData} /> : null;
+  return (
+    <div className="bg-white p-6 rounded-lg shadow-md">
+      {chartData ? <Line options={options} data={chartData} /> : null}
+    </div>
+  );
 };
 
 export default AreaChart;

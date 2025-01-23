@@ -1,16 +1,17 @@
-"use client" 
-import React from 'react'
-import { formatAmount } from '@/lib/utils';
+'use client';
+
 import CountUp from 'react-countup';
 
-const AnimatedCounter = ({amount} : {amount: number}) => {
+const AnimatedCounter = ({ amount }: { amount: number }) => {
   return (
-        
-      <CountUp end={amount} 
-      decimals= {2}
-      duration={3}
-      prefix='$'/>
-    
+    <div className="w-full">
+      <CountUp 
+        decimals={2}
+        decimal=","
+        prefix="$"
+        end={amount} 
+      />
+    </div>
   )
 }
 

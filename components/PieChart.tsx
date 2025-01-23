@@ -27,7 +27,7 @@ const PieChart = () => {
   };
 
   return (
-    <div style={{ position: "relative" }}>
+    <div className="bg-white p-6 rounded-lg shadow-md">
       <Pie
         data={data}
         options={{
