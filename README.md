@@ -37,9 +37,7 @@ Make sure you have the following installed on your machine:
 
 **Cloning the Repository**
 
-```bash
-git clone https://github.com/yogitasingla93/banking.git
-cd banking
+open the zip folder and go to banking directory.
 ```
 
 **Installation**
