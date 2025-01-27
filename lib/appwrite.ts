@@ -1,21 +1,20 @@
 "use server";
 
 import { Client, Account, Databases, Users } from "node-appwrite";
-import { cookies } from "next/headers";
 
 export async function createSessionClient() {
   const client = new Client()
     .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT!)
     .setProject(process.env.NEXT_PUBLIC_APPWRITE_PROJECT!);
 
-  const session = await cookies().get("appwrite-session");
+  // Hardcoded session value with valid scopes
+  const sessionValue = "your-valid-session-token"; // Replace with a session token that has the required 'account' scope
 
-
-  if (!session || !session.value) {
-    throw new Error("No session");
+  if (!sessionValue) {
+    throw new Error("No session value available");
   }
 
-  client.setSession(session.value);
+  client.setSession(sessionValue);
 
   return {
     get account() {
@@ -39,7 +38,6 @@ export async function createAdminClient() {
     },
     get user() {
       return new Users(client);
-    }
+    },
   };
 }
-
