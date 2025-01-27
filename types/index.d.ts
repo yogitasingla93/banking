@@ -138,7 +138,7 @@ declare type NewDwollaCustomerParams = {
 };
 
 declare interface CreditCardProps {
-  account: Account;
+  cards: Account[];  // Use Account type for cards
   userName: string;
   showBalance?: boolean;
 }
@@ -158,6 +158,7 @@ declare interface HeaderBoxProps {
 
 declare interface MobileNavProps {
   user: User;
+  profileImg: any;
 }
 
 declare interface PageHeaderProps {
@@ -217,6 +218,7 @@ declare interface FooterProps {
 
 declare interface SiderbarProps {
   user: User;
+  profileImg: any; 
 }
 
 declare interface RecentTransactionsProps {

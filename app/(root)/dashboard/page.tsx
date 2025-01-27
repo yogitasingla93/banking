@@ -2,7 +2,6 @@
 
 import React from 'react';
 import HeaderBox from '@/components/HeaderBox';
-import TotalBalanceBox from '@/components/TotalBalanceBox';
 import BankCardSection from '@/components/BankCards';
 import RecentTransactions from '@/components/RecentTransactions';
 import VerticalBarChart from '@/components/VerticalBarChart';
@@ -14,7 +13,7 @@ const Dashboard = () => {
   return (
     <div>
       <header className='home-header header-main'>
-          <HeaderBox title="Overview" />           
+          <HeaderBox title="Overview" subtext="your complete financial data" />           
         </header>
     <section className='home flex-1 mx-auto p-6 bg-dash'>
       <div className='container'>
@@ -25,9 +24,9 @@ const Dashboard = () => {
           <div className="col-span-2">
             <BankCardSection
               cards={[
-                { id: '', availableBalance: 0, currentBalance: 5756, officialName: '', mask: '1234', institutionId: '', name: 'Eddy Cusuma', type: '', subtype: '', appwriteItemId: '', sharableId: '' },
-                { id: '', availableBalance: 0, currentBalance: 5756, officialName: '', mask: '1234', institutionId: '', name: 'Eddy Cusuma', type: '', subtype: '', appwriteItemId: '', sharableId: '' },
-                { id: '', availableBalance: 0, currentBalance: 5756, officialName: '', mask: '1234', institutionId: '', name: 'Eddy Cusuma', type: '', subtype: '', appwriteItemId: '', sharableId: '' },
+                { id: '1', availableBalance: 0, currentBalance: 5756, officialName: '', mask: '1234', institutionId: '', name: 'Eddy Cusuma', type: '', subtype: '', appwriteItemId: '', shareableId: '' },
+                { id: '2', availableBalance: 0, currentBalance: 5756, officialName: '', mask: '1234', institutionId: '', name: 'Eddy Cusuma', type: '', subtype: '', appwriteItemId: '', shareableId: '' },
+                { id: '3', availableBalance: 0, currentBalance: 5756, officialName: '', mask: '1234', institutionId: '', name: 'Eddy Cusuma', type: '', subtype: '', appwriteItemId: '', shareableId: '' },
               ]}
               userName="Eddys"
             />

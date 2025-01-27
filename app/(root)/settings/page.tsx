@@ -75,7 +75,7 @@ const SettingsPage = () => {
   return (
     <div>
     <header className='home-header header-main'>
-        <HeaderBox title="Settings" />           
+        <HeaderBox title="Settings" subtext="Update the page sttings carefully" />           
       </header>
     <div className="flex-1 mx-auto p-6 bg-dash">
       <div className="bg-white rounded-lg p-10">

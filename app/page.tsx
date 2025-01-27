@@ -5,7 +5,7 @@ export default function Home() {
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <p className="text-lg text-center sm:text-left">
-          Please visit <a href="/dashboard" className="text-blue-500 hover:underline">Dashboard</a> and <a href="/settings" className="text-blue-500 hover:underline">settings</a> page to view tasks.
+          Please visit <a href="/dashboard" className="text-blue-500 hover:underline">Dashboard</a> and <a href="/settings" className="text-blue-500 hover:underline">settings</a> page to view task.
         </p>
         <h1 className="text-5xl font-extrabold text-primary text-center sm:text-left">
           Assessment Yogita Singla
@@ -81,6 +81,7 @@ export default function Home() {
           <section className="mt-8">
             <h2 className="text-2xl font-semibold">Projects</h2>
             <ul className="list-disc list-inside text-lg mt-2">
+            <li><a href="https://www.measured.com/" className="text-blue-500 hover:underline">Measured Website - Homepage, FAQ, product pages redesign </a></li>
               <li><a href="https://www.measured.com/upcoming-events/" className="text-blue-500 hover:underline">Measured Website - Upcoming Events</a></li>
               <li><a href="https://www.brecksgifts.com/" className="text-blue-500 hover:underline">Breck’s Gifts Website Redesign</a></li>
               <li><a href="https://bitsandpiecesuk.co.uk/" className="text-blue-500 hover:underline">Cart and Sale Prices Optimization</a></li>

@@ -5,12 +5,17 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { formatAmount } from '@/lib/utils';
 
-const BankCardSection = ({
+// Make sure to import the Account type if it's in another file
+// import { Account } from './path-to-your-account-type';
+
+interface BankCardSectionProps {
+  cards: Account[]; // cards should be of type Account[]
+  userName: string;
+}
+
+const BankCardSection: React.FC<BankCardSectionProps> = ({
   cards = [],
   userName = '',
-}: {
-  cards: CreditCardProps[];
-  userName: string;
 }) => {
   const topCards = cards.slice(0, 2); // Top two visible cards
   const hiddenCards = cards.slice(2); // Cards beyond the first two
