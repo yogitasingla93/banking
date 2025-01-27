@@ -4,7 +4,7 @@ import React from 'react'
 import BankCard from './BankCard'
 import { countTransactionCategories } from '@/lib/utils'
 
-const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
+const RightSidebar = ({ user, transactions, banks }: SiderbarProps) => {
   const categories: CategoryCount[] = countTransactionCategories(transactions);
 
   return (
