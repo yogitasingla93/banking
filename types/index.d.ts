@@ -154,6 +154,7 @@ declare interface HeaderBoxProps {
   title: string;
   subtext: string;
   user?: string;
+  profileImg: any;
 }
 
 declare interface MobileNavProps {
@@ -189,9 +190,9 @@ declare interface PlaidLinkProps {
 //   image: string;
 // };
 
-declare interface AuthFormProps {
-  type: "sign-in" | "sign-up";
-}
+//declare interface AuthFormProps {
+ // type: "sign-in" | "sign-up";
+//}
 
 declare interface BankDropdownProps {
   accounts: Account[];

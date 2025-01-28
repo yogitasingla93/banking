@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useRef } from "react";
+import Image from "next/image";
 
 const frequentContacts = [
   { id: 1, name: "Livia Bator", role: "CEO", profilePic: "/icons/livia.png" },
@@ -59,10 +60,12 @@ const QuickTransfer = () => {
               className="flex-none w-1/3 text-center cursor-pointer"
               onClick={() => handleContactSelect(contact.id)}
             >
-              <img
-                src={contact.profilePic}
+              <Image
+                src={contact.profilePic || '/icons/default-profile.png'}
                 alt={contact.name}
                 className="w-16 h-16 rounded-full mx-auto mb-2"
+                width={64} 
+                height={64} 
               />
               <p
                 className={`font-bold ${
@@ -105,12 +108,12 @@ const QuickTransfer = () => {
             onChange={(e) => setTransferAmount(e.target.value)}
           />
           {/* Send Button */}
-          <img
+          <Image
             src="/icons/transferbtn.png"
+            alt="Send"
             width={75}
             height={40}
-            alt="Send"
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 w-75 h-10 cursor-pointer p-0 m-0"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer p-0 m-0"
             onClick={handleSend}
           />
         </div>

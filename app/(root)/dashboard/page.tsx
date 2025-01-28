@@ -9,6 +9,20 @@ import PieChart from '@/components/PieChart';
 import QuickTransfer from '@/components/QuickTransfer';
 import AreaChart from '@/components/AreaChart';
 
+type DummyTransaction = {
+  id: number;
+  type: string;
+  date: string;
+  amount: string;
+  logo: string;
+};
+
+const DUMMY_TRANSACTIONS: DummyTransaction[] = [
+  { id: 1, type: "Deposit from my Card", date: "28 January 2021", amount: "-$850", logo: "/icons/mycard.png" },
+  { id: 2, type: "Deposit Paypal", date: "28 January 2021", amount: "+$2500", logo: "/icons/paypal.png" },
+  { id: 3, type: "Jemi Wilson", date: "21 January 2021", amount: "+5,400", logo: "/icons/jemi.png" },
+];
+
 const Dashboard = () => {
   return (
     <div>
@@ -32,7 +46,7 @@ const Dashboard = () => {
             />
           </div>
           <div className="col-span-1">
-            <RecentTransactions />
+            <RecentTransactions  transactions={DUMMY_TRANSACTIONS as Transaction[]} />
           </div>
         </section>
 

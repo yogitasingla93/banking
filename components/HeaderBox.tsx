@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 const HeaderBox = ({ type = "title", title, subtext, user, profileImg }: HeaderBoxProps) => {
   return (
@@ -19,41 +20,51 @@ const HeaderBox = ({ type = "title", title, subtext, user, profileImg }: HeaderB
       {/* Right Section: Search Bar, Icons, and Profile Photo */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:ml-auto space-y-4 sm:space-y-0 sm:space-x-4 w-full sm:w-auto p-4 sm:justify-between">
         {/* Search Bar with Icon */}
-        <div className="flex items-center border rounded-lg py-1 px-2 focus-within:ring focus-within:ring-bankGradient w-full sm:w-auto">
-          <img 
-            src="/icons/search.png" 
-            alt="Search" 
-            className="w-4 h-4 text-gray-500 mr-2"
-          />
-          <input 
-            type="text" 
-            placeholder="Search for something" 
-            className="outline-none text-sm w-full"
-          />
-        </div>
-
-        {/* Settings and Notifications Icons (hidden on small devices) */}
         <div className="flex items-center space-x-4 hidden sm:flex">
+          {/* Search Input with Search Icon */}
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="border rounded-md pl-10 pr-4 py-2 text-gray-700 w-full"
+            />
+            <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
+              <Image
+                src="/icons/search.png"
+                alt="Search"
+                className="w-5 h-5"
+                width={20}
+                height={20}
+              />
+            </div>
+          </div>
+
           {/* Settings Icon */}
-          <img 
-            src="/icons/setting.png" 
-            alt="Settings" 
+          <Image
+            src="/icons/setting.png"
+            alt="Settings"
             className="w-6 h-6 cursor-pointer"
+            width={24}
+            height={24}
           />
 
           {/* Notifications Icon */}
-          <img 
-            src="/icons/notifications.png" 
-            alt="Notifications" 
+          <Image
+            src="/icons/notifications.png"
+            alt="Notifications"
             className="w-6 h-6 cursor-pointer"
+            width={24}
+            height={24}
           />
         </div>
 
         {/* Profile Photo */}
-        <img 
-          src={profileImg || "/icons/eddy.png"} 
-          alt="Profile" 
+        <Image
+          src={profileImg || "/icons/eddy.png"}
+          alt="Profile"
           className="w-8 h-8 rounded-full cursor-pointer"
+          width={32}
+          height={32}
         />
       </div>
     </div>

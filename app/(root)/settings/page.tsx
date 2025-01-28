@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"; // Import shadcn tabs
 import HeaderBox from "@/components/HeaderBox";
+import Image from "next/image";
 
 // Dummy API
 const mockFetchUserData = async () => ({
@@ -116,16 +117,24 @@ const SettingsPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {/* Profile Picture */}
             <div className="text-center relative w-32 h-32 mx-auto">
-                  <img
-                    src={formData.profilePicture ? URL.createObjectURL(formData.profilePicture) : "/icons/charlene.jpg"}
-                    alt="Profile"
-                    className="w-full h-full rounded-full object-cover border-2"
-                  />
+            <Image
+                src={formData.profilePicture ? URL.createObjectURL(formData.profilePicture) : "/icons/charlene.jpg"}
+                alt="Profile"
+                className="w-full h-full rounded-full object-cover border-2"
+                width={100} 
+                height={100} 
+              />
                   <label
                     htmlFor="profilePicture"
                     className="absolute bottom-2 right-2 bg-blue-500 p-0 rounded-full cursor-pointer"
                   >
-                    <img src="/icons/edit.png" alt="edit" className="w-6 h-6 text-white" />
+                   <Image
+                    src="/icons/edit.png"
+                    alt="edit"
+                    className="w-6 h-6 text-white"
+                    width={24}  
+                    height={24}
+                  />
                   </label>
                   <input
                     type="file"
