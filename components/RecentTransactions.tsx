@@ -4,7 +4,12 @@ import { BankTabItem } from './BankTabItem';
 import BankInfo from './BankInfo';
 import { Pagination } from './Pagination';
 
-const RecentTransactions = () => {
+const RecentTransactions: React.FC<RecentTransactionsProps> = ({
+  accounts,
+  transactions,
+  appwriteItemId,
+  page,
+}) =>  {
   // Dummy transaction data
   const DUMMY_TRANSACTIONS = [
     { id: 1, type: "Deposit from my Card", date: "28 January 2021", amount: "-$850", logo: "/icons/mycard.png" },

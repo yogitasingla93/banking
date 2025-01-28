@@ -222,7 +222,7 @@ declare interface SiderbarProps {
 }
 
 declare interface RecentTransactionsProps {
-  accounts: Account[];
+  accounts: any;
   transactions: Transaction[];
   appwriteItemId: string;
   page: number;
@@ -243,10 +243,6 @@ declare interface TransactionTableProps {
 
 declare interface CategoryProps {
   category: CategoryCount;
-}
-
-declare interface DoughnutChartProps {
-  accounts: Account[];
 }
 
 declare interface PaymentTransferFormProps {

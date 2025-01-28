@@ -15,7 +15,7 @@ const config = {
       center: true, // Center content in its container
       padding: {
         DEFAULT: "0",
-        lg: 0, // Padding for all screens
+        lg: "0", // Padding for all screens
       },
       screens: {
         "2xl": "1100px",

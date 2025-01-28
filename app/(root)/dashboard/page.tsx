@@ -13,7 +13,7 @@ const Dashboard = () => {
   return (
     <div>
       <header className='home-header header-main'>
-          <HeaderBox title="Overview" subtext="your complete financial data" />           
+          <HeaderBox title="Overview" subtext=" " />           
         </header>
     <section className='home flex-1 mx-auto p-6 bg-dash'>
       <div className='container'>
